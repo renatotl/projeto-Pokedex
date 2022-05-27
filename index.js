@@ -7,3 +7,4 @@ app.get("/", function (req, res) {
 
 app.listen(3000);
 // http://localhost:3000/    http://localhost:3000/
+// npm run dev
