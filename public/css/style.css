@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+header {
+    
+    padding: 4rem;
+    background-color: rgb(236, 16, 34);
+    /*foi colocado display flex aqui e não consegui alinha no h1 com text-aling center */
+    
+    
+}
+
+header h1{
+  color: aliceblue;
+  font-size: 2rem;
+  text-align: center;
+}
+
+body{
+    background-color: rgb(5, 110, 170);
+    height: 100vh;
+
+}
+main{
+   margin: 0 10rem 0 10rem;
+
+}
+
+section#cards{
+  display: flex;
+  justify-content: space-evenly; /* um espaço armonioso entre os itens  */
+  margin-top: 5rem;/* abaixa um pouco os cards do header */
+}
+
+section#cards div.card{/*stylirizando o card */
+   width: 20rem;
+   box-shadow: 5px 5px 5px 5px   #00000020;
+   padding: 2rem;
+
+}
+
+section#cards div.card img{ /* stylirizando a imagem do card */
+    width: 100%;/* ocupa 100% do espaço do card NÃO ESQUEÇA */
+ 
+ }
+
+ section#cards div.card h2{ /* stylirizando h2*/
+ margin-bottom: 1rem; /* afasta o nome do pokemon do texto em baixo */
+
+ }
+
+ section#cards div.card p.descricao{ /* stylirizando parágrafo da descrição*/
+  margin-bottom: 1rem; /* afasta a descrição do tipo */
+
+ }
