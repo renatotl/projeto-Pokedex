@@ -5,22 +5,57 @@
     padding: 0;
     margin: 0;
     font-family: 'Press Start 2P', cursive;
+    scroll-behavior: smooth;
+}nav {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  background-color: #dc0a2d;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 0.6rem;
+}
+
+nav img {
+  width: 3rem;
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
 }
 
 
 header {
-    
-    padding: 4rem;
-    background-color: rgb(236, 16, 34);
+  
+    padding: 2rem;
+    background-color: rgb(252, 248, 248);
     /*foi colocado display flex aqui e não consegui alinha no h1 com text-aling center */
     
     
 }
 
 header h1{
-  color: aliceblue;
+  color: rgb(8, 8, 8);
   font-size: 2rem;
   text-align: center;
+  margin-top: 2rem;
+}
+header img{
+  width: 5%
 }
 
 body{
@@ -33,10 +68,15 @@ main{
 
 }
 
+#doId{
+  margin-top: .4rem;
+}
+
 section#cards{
   display: flex;
   justify-content: space-evenly; /* um espaço armonioso entre os itens  */
   margin-top: 5rem;/* abaixa um pouco os cards do header */
+  flex-wrap: wrap;/* não deixa juntar muito os cards e joga pra baixo*/
 }
 
 section#cards div.card{/*stylirizando o card */
@@ -60,3 +100,32 @@ section#cards div.card img{ /* stylirizando a imagem do card */
   margin-bottom: 1rem; /* afasta a descrição do tipo */
 
  }
+ 
+ section#cadastrarPokemon{
+flex-direction: column;
+margin: 3rem;
+
+ }
+
+ section#cadastrarPokemon div{
+  margin: 1rem;
+  
+ }
+ section#cadastrarPokemon form input{
+  width: 50%;
+  padding: .4rem;
+border: none;
+  
+ }
+ section#cadastrarPokemon button{
+  padding: .4rem;
+border: none;
+transform: 7s;
+ }
+ 
+ footer{
+   background-color:rgb(236, 16, 34);
+   padding: 3rem;
+   text-align: center;
+ }
+

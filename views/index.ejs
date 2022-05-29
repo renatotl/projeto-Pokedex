@@ -11,19 +11,35 @@
 
 <body>
 
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/"><!-- pro google indexa minha página-->
+                    <h1>Pokédex</h1>
+                </a>
+            </li>
+            <li><a href="#cadastrarPokemon">Cadastro</a> </li>
+            <li><a href="#cards">Pokemons</a></li>
+        </ul>
+    </nav>
+
+
     <header>
         <h1>Pokédex</h1>
-
+        <img src="img/download.png" alt="pokebola">
     </header>
 
     <main>
         <!--esse maon é pla facilitar na stylização-->
-        <section id="cards"><!--section card  possível stylirizar-->
+        <section id="cards">
+            <!--section card  possível stylirizar-->
             <% pokedex.forEach((pokemon)=> { %>
                 <!--essa estrutura precisa ser fechada na emsma linha   <%  %>-->
 
 
-                <div  class="card"><!--possível stylirizar card por card-->
+                <div class="card">
+                    <!--possível stylirizar card por card-->
                     <!--o foreach vai criar várias div para separar em vários cardizinhos-->
                     <img src=" <%= pokemon.imagem %>" alt="">
                     <!-- essa sintex que pegamos links do JS esse sinal de = é porque é apresentado uma variável para acessar os itens de um OBJETO colocamos o PONTO-->
@@ -35,15 +51,81 @@
                     </p>
                     <p>Tipo: <%= pokemon.tipo %>
                     </p>
+                    <p id="doId"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
+                    <a href="/detalhes/<%=pokemon.id%>">Editar</a>
+                    <a href="/delete/<%=pokemon.id%>">Apagar</a>
+
                 </div>
                 <% }) %>
                     <!--precisamos dessa sintex para escrever em javaScript no thml-->
         </section>
+        <!--FORMULÁRIO-->
+        <section id="cadastrarPokemon">
 
+            <% if (pokemon == undefined) { %>  <!--se pokemon for undefined o if irá rodar o código de baixo-->
+            <h2> Cadastrar Pokemon </h2>
+            <!-- 0 Action do form recebe as informações Esse atributo é o responsável por dizer para onde os dados serão enviados, ou seja, para qual rota no meu back-end esse dados vão, para que lá no back-end eles sejam tratados, esse tratamento pode ser, guarda-los em memoria temporária ou persistir esses dados em algum banco de dados. Nas próximas semanas vamos aprender essa persistência, por ora vamos armazenar em memória.-->
+            <form action="/add" method="POST">
+                <!-- esse add manda a informação lá pro js-->
+                <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
+                
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" quired >
+                </div>
+                <div>
+                    <label for="descricao">Descrição: </label>
+                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" quired>
+                </div>
+                <div>
+                    <label for="tipo">tipo: </label>
+                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" quired>
+                </div>
+                <div>
+                    <label for="imagem">imagem: </label>
+                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" quired>
+                </div>
+
+                <button id="btCadastrar" type="submit">Cadastrar</button>
+            </form>
+
+            <% } else {%>
+                <h2> Atualizção do pokemon </h2>
+            
+
+            <form action="/update/<%= pokemon.id %>" method="POST">
+                <!-- esse add manda a informação lá pro js-->
+                <!--Esse atributo é responsável por dizer como nossos dados serão enviados para a rota determinada, existem duas formas de enviar esses dados, pelo método GET ou POST-->
+                
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" value="<%= pokemon.nome %>">
+                </div>
+                <div>
+                    <label for="descricao">Descrição: </label>
+                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" value="<%= pokemon.descricao %>">
+                </div>
+                <div>
+                    <label for="tipo">tipo: </label>
+                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" value="<%= pokemon.tipo %>">
+                </div>
+                <div>
+                    <label for="imagem">imagem: </label>
+                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" value="<%= pokemon.imagem %>">
+                </div>
+
+                <button id="btAtualizar" type="submit">Atualizar</button>
+            </form>
+              <% } %>
+
+        </section>
 
     </main>
 
 
 </body>
+<footer>
+    <p>Desenvolvido por: Renato Tenório</p>
+</footer>
 
 </html>
