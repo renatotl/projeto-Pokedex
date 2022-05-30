@@ -53,6 +53,8 @@ section#cards div.card a#editar {
   margin-top: 2rem;
 }
 
+
+
 section#cards div.card a#apagar {
     padding: 0.6rem;
     display: flex;
@@ -79,7 +81,7 @@ section#cards div.card a#apagar {
       color: #fff;
     }
 
-    
+
 
 header {
   
@@ -120,6 +122,20 @@ section#cards{
   margin-top: 5rem;/* abaixa um pouco os cards do header */
   flex-wrap: wrap;/* não deixa juntar muito os cards e joga pra baixo*/
 }
+section#info{
+  display: flex;
+  justify-content: space-evenly; /* um espaço armonioso entre os itens  */
+  margin-top: 5rem;/* abaixa um pouco os cards do header */
+  flex-wrap: wrap;/* não deixa juntar muito os cards e joga pra baixo*/
+}
+
+section#info div.cardd{/*stylirizando o card */
+  width: 20rem;
+  box-shadow: 5px 5px 5px 5px   #00000020;
+  padding: 2rem;
+
+}
+
 
 section#cards div.card{/*stylirizando o card */
    width: 20rem;
@@ -143,6 +159,12 @@ section#cards div.card img{ /* stylirizando a imagem do card */
 
  }
  
+ section#info div.cardd p.descricaoo{ /* stylirizando parágrafo da descrição*/
+  margin-bottom: 1rem; /* afasta a descrição do tipo */
+
+ }
+ 
+
  section#cadastrarPokemon{
 flex-direction: column;
 margin: 3rem;
@@ -170,4 +192,7 @@ transform: 7s;
    padding: 3rem;
    text-align: center;
  }
+
+
+
 

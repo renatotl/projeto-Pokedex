@@ -52,6 +52,7 @@
                     <p>Tipo: <%= pokemon.tipo %>
                     </p>
                     <p id="doId"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
+                    <a id="#infoo" href="/info/<%=pokemon.id%>">info</a>
                     <a id="editar" href="/detalhes/<%=pokemon.id%>">Editar</a>
                     <a id="apagar" href="/delete/<%=pokemon.id%>">Apagar</a>
 
@@ -84,6 +85,22 @@
                 <div>
                     <label for="imagem">imagem: </label>
                     <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" quired>
+                </div>
+                <div>
+                    <label for="height">altura: </label>
+                    <input type="text" name="height" id="altura" placeholder="Altura" quired>
+                </div>
+                <div>
+                    <label for="weigh">Peso: </label>
+                    <input type="text" name="weigh" id="weigh" placeholder="Peso" quired>
+                </div>
+                <div>
+                    <label for="category">categoria: </label>
+                    <input type="text" name="category" id="category" placeholder="Categoria" quired>
+                </div>
+                <div>
+                    <label for="abilities">Abilidade: </label>
+                    <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade" quired>
                 </div>
 
                 <button id="btCadastrar" type="submit">Cadastrar</button>
@@ -121,6 +138,13 @@
         </section>
 
     </main>
+
+    <section id="info">
+
+
+        
+
+    </section>
 
 
 </body>

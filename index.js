@@ -1,4 +1,5 @@
 require("dotenv").config();// foi necessário instalar o npm i dotenv para o heroko pegando as configurações do DOTENV e chamando pro projeto
+const { render } = require("ejs");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
@@ -22,21 +23,33 @@ const pokedex =[//um arrey de objetos
     nome: "Pikachu",
     descricao: "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
     tipo: "eletric" ,
-    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png"
+    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+    height: "0.4m",
+      weight: "6.0 KG",
+      category: "Mouse",
+      abilities: "Statc"
   },
   { 
   id:2 ,
   nome: "Charmander",
     descricao: "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
     tipo: "fire" ,
-    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
+    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+    height: "0.6m",
+      weight: "8.5 KG",
+      category: "lizard",
+      abilities: "blaze"
   },
   { 
     id:3 ,
     nome: "Squirtle",
       descricao: "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
       tipo: "water" ,
-      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
+      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+      height: "0.5m",
+      weight: "9.0 KG",
+      category: "Tyni turtle",
+      abilities: "Torrent"
     },
 ]
 
@@ -99,6 +112,19 @@ delete pokedex[id]
 res.redirect("/#cards");
 
 })
+
+app.get("/info/:id", (req,res) => {
+  res.render("index2", {pokedex, pokemon} )
+  pokedex[id] = newPokemon;
+  res.redirect("/#cards");
+
+
+})
+
+app.get("/retornar/:id", (req,res) => {
+res.render("index", {pokedex, pokemon} )
+})
+
 
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
