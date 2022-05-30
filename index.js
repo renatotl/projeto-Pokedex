@@ -3,7 +3,7 @@ const express = require("express");
 const res = require("express/lib/response");
 const app = express();
 const path = require("path");//importando uma lib do proprio express chamada path  essencial link o frontend com o backend
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //esse code é pro heroko
 
 app.use(express.urlencoded())//navegador envia as informações pelo json e essas informçãoes vem do body pega as informações que o cliente digitou no unput e envia pelo json 
 app.set("view engine", "ejs"); //mortor engine da view é o ejs essencial
@@ -87,7 +87,21 @@ pokemon = undefined;
    res.redirect("/#cards");
 })
 
-app.listen(3000, () => console.log("Servidor rodando em http://localhost:3000"));//ouvindo a porta 3000, rodando nessa porta
+//criando a rota delete
+app.get("/delete/:id", (req,res) => {
+//pegando a posição do ID transformando ele em número e subtraindo 1
+const id = +req.params.id -1;
+
+
+delete pokedex[id]
+
+
+res.redirect("/#cards");
+
+})
+
+
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
 // http://localhost:3000/    http://localhost:3000/
 // npm run dev
 

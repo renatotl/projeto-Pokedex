@@ -52,8 +52,8 @@
                     <p>Tipo: <%= pokemon.tipo %>
                     </p>
                     <p id="doId"> Id <%= pokemon.id %></p><!-- o sinal de igual foi essencial para funcionar-->
-                    <a href="/detalhes/<%=pokemon.id%>">Editar</a>
-                    <a href="/delete/<%=pokemon.id%>">Apagar</a>
+                    <a id="editar" href="/detalhes/<%=pokemon.id%>">Editar</a>
+                    <a id="apagar" href="/delete/<%=pokemon.id%>">Apagar</a>
 
                 </div>
                 <% }) %>
