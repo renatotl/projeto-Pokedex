@@ -70,6 +70,42 @@ section#cards div.card a#apagar {
     margin-top: 1rem;
   }
 
+  section#cards div.card a#infoo {
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #ff0000;
+    color: #ff0000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  section#info div.cardd a#retornar {
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1rem;
+    background-color: #fff;
+    border: solid 1px #ff0000;
+    color: #ff0000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  section#info div.cardd a#retornar:hover {
+    background-color: #ff0000;
+    color: #fff;
+  }
+  section#cards div.card a#infoo:hover {
+    background-color: #ff0000;
+    color: #fff;
+  }
 
   section#cards div.card a#editar:hover {
     background-color: #0077ff;
