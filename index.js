@@ -52,23 +52,27 @@ const pokedex =[//um arrey de objetos
       abilities: "Torrent"
     },
 ]
+let message = "";
 
 let pokemon = undefined;//se refere a linha de baixo
 
 //rotas
 app.get("/", (req, res) => {
+
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   
-  res.render("index", {pokedex, pokemon});// É MUITO IMPORTANDO COLOCAR O POKEDEX ENTRE CHAVES COMO JSON SÓ ASSIM A NOSSA RESPOSTA É ENVIADA foi esse code que consegui imprimir na tela está renderizando index na pasta index
+  res.render("index", {pokedex, pokemon, message});// É MUITO IMPORTANDO COLOCAR O POKEDEX ENTRE CHAVES COMO JSON SÓ ASSIM A NOSSA RESPOSTA É ENVIADA foi esse code que consegui imprimir na tela está renderizando index na pasta index
 });
 // o add é um nome aleatório 
 app.post("/add", (req,res) =>{
    const pokemon = req.body;// o que vem da requisição .body
+   message = `Pokemon, cadastrado com sucesso`;
    //todo pokemon add já recebe um id automático
    pokemon.id = pokedex.length + 1;
    //no code abaixo que pegamos as informações e inserimos na pokedex
    pokedex.push(pokemon);
- 
-
    res.redirect("/#cards")// retorna pra rota "/" que logo em seguida renderiza o index na linha 44 e 45
 });
 
@@ -122,7 +126,7 @@ app.get("/info/:id", (req,res) => {
 })
 
 app.get("/retornar/:id", (req,res) => {
-res.render("index", {pokedex, pokemon} )
+res.render("index", {pokedex, pokemon, message} )
 })
 
 

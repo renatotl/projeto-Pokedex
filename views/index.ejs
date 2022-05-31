@@ -24,6 +24,12 @@
         </ul>
     </nav>
 
+    <!-- o code de baixo é pra message não aparecer toda hora e sem mensagem-->
+    <% if(message != "") {  %>
+<section id="message"> <!--CODE de confirmação de cadastro-->
+    <p><%= message %></p> <span id="close">&times;</span>
+</section>
+<% }  %>
 
     <header>
         <h1>Pokédex</h1>
@@ -146,7 +152,7 @@
 
     </section>
 
-
+    <script src="/js/script.js"></script>
 </body>
 <footer>
     <p>Desenvolvido por: Renato Tenório</p>
