@@ -173,7 +173,7 @@ section#info{
 
 section#info div.cardd{/*stylirizando o card */
   width: 20rem;
-  box-shadow: 5px 5px 5px 5px   #00000020;
+  
   padding: 2rem;
 
 }

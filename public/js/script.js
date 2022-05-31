@@ -11,3 +11,5 @@ setTimeout(() => {
   }, 3000);
 
   // foi necessário cliar uma pasta dentro de public com o arquivo script.js com esse code em cima para podemos controlar a mensagem 
+
+  
