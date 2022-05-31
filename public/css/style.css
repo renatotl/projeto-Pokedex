@@ -97,7 +97,10 @@ section#cards div.card a#apagar {
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     margin-top: 1rem;
+    
+
   }
+  
   section#info div.cardd a#retornar:hover {
     background-color: #ff0000;
     color: #fff;
@@ -221,8 +224,15 @@ border: none;
   padding: .4rem;
 border: none;
 transform: 7s;
+cursor: pointer;
+
  }
- 
+ section#cadastrarPokemon button:hover{
+  background-color: #ff0000;
+  color: #fff;
+    transition: all 0.3s ease-in-out;
+
+ }
  footer{
    background-color:rgb(236, 16, 34);
    padding: 3rem;
