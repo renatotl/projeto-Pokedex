@@ -118,33 +118,26 @@ res.redirect("/#cards");
 })
 
 app.get("/info/:id", (req,res) => {
+const id = +req.params.id -1;// esses códigos foram exenciasi para info mostrar um pokemon
+ 
+  pokemon = pokedex[id]
+  
   res.render("index2", {pokedex, pokemon} )
-  pokedex[id] = newPokemon;
-  res.redirect("/#cards");
-
+ 
 
 })
 
 app.get("/retornar/:id", (req,res) => {
-res.render("index", {pokedex, pokemon, message} )
+  pokemon = undefined;
+  res.redirect("/") // quando retornar ele volta pra pg inicial
+
 })
 
 
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
-// http://localhost:3000/    http://localhost:3000/
-// npm run dev
 
-// app.post('/trocar',(req,res)=>{
-//   const corpo = req.body
-//   const indice = corpo.indice
 
-//   src = imagens[indice]
-//   console.log('##corpo da requisição',req.body)
-//   console.log('##corpo.indice ',req.body.indice)
-//   res.redirect('/')
-// })
 
-// app.listen(332,()=>{
-//   console.log('o servidor está rodando')
-// })
+
+// É MUITO IMPORTANTE A ORDEM DAS LINHAS PRIORIDADE
