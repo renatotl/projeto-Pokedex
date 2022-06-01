@@ -9,7 +9,7 @@
 }nav {
   position: fixed;
   z-index: 9999;
-  width: 100%;
+  width: 100vw;
   background-color: #dc0a2d;
 }
 
@@ -210,11 +210,12 @@ section#cards div.card img{ /* stylirizando a imagem do card */
  section#cadastrarPokemon{
 flex-direction: column;
 margin: 3rem;
-
+width: 100%;
  }
 
  section#cadastrarPokemon div{
   margin: 1rem;
+  
   
  }
  section#cadastrarPokemon form input{

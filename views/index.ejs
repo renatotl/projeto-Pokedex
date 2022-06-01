@@ -122,20 +122,37 @@
                 
                 <div>
                     <label for="nome">Nome: </label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" value="<%= pokemon.nome %>">
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do pokemon" value="<%= pokemon.nome %>"required>
                 </div>
                 <div>
                     <label for="descricao">Descrição: </label>
-                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" value="<%= pokemon.descricao %>">
+                    <input type="text" name="descricao" id="Descrição" placeholder="Digite a Descrição" value="<%= pokemon.descricao %>"required>
                 </div>
                 <div>
                     <label for="tipo">tipo: </label>
-                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" value="<%= pokemon.tipo %>">
+                    <input type="text" name="tipo" id="tipo" placeholder="Digite o tipo" value="<%= pokemon.tipo %>"required>
                 </div>
                 <div>
                     <label for="imagem">imagem: </label>
-                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" value="<%= pokemon.imagem %>">
+                    <input type="text" name="imagem" id="imagem" placeholder="Cole o endereço do link da imagem" value="<%= pokemon.imagem %>"required>
                 </div>
+                <div>
+                    <label for="height">altura: </label>
+                    <input type="text" name="height" id="altura" placeholder="Altura" value="<%= pokemon.height %>"required>
+                </div>
+                <div>
+                    <label for="weigh">Peso: </label>
+                    <input type="text" name="weigh" id="weigh" placeholder="Peso" value="<%= pokemon.weigh %>" required>
+                </div>
+                <div>
+                    <label for="category">categoria: </label>
+                    <input type="text" name="category" id="category" placeholder="Categoria" value="<%= pokemon.category %>" required>
+                </div>
+                <div>
+                    <label for="abilities">Abilidade: </label>
+                    <input type="text" name="abilitiesy" id="abilities" placeholder="Abilidade" value="<%= pokemon.abilities %>" required><!--Neste caso o value="<%= pokemon.tipo %>" PEGA A INFORMAÇÃO já registrada na cadastro para atualização-->
+                </div>
+
 
                 <button id="btAtualizar" type="submit">Atualizar</button>
             </form>
