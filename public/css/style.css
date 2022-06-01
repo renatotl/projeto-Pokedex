@@ -271,5 +271,12 @@ span#close:hover{
   transform: scale(1.5);
 }
 
+#linkP{
+text-decoration: none;/* remove a linha sublinhada do texto*/
+color: rgb(8, 8, 8);
 
+}
 
+#linkP:hover{
+color:#fff
+}
